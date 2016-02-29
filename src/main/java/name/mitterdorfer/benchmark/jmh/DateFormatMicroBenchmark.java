@@ -15,9 +15,9 @@ import java.util.concurrent.TimeUnit;
  * Build a shaded JAR first by issuing "gradle shadow", then run this microbenchmark with
  * java -jar build/distributions/benchmarking-experiments-0.1.0-shadow.jar "name.mitterdorfer.benchmark.jmh.DateFormat.*" -rf csv -rff dateformats.csv
  */
-@Fork(5)
-@Warmup(iterations = 10)
-@Measurement(iterations = 10)
+@Fork(1)
+@Warmup(iterations = 5)
+@Measurement(iterations = 5)
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
 public class DateFormatMicroBenchmark {
