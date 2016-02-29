@@ -31,6 +31,24 @@ java -jar target/benchmarking-experiments.jar
 
 The Gradle build file supports also IntelliJ IDEA project setup. Just issue `gradle idea` to create the project files.
 
+# Visualize jmh benchmark result of DateFormat
+## Run benchmark of DateFormat
+```
+java -jar build/libs/benchmarking-experiments-0.1.0-all.jar "name.mitterdorfer.benchmark.jmh.DateFormat.*"
+```
+
+The final result could be something like dateformats.csv
+
+Group result by number of threads
+```
+awk -F ',' 'BEGIN{OFS=""} /_[0-9]/ {S[$3]=S[$3]" "$5} END {for (a in S) print a,S[a]}' dateformats.csv
+```
+
+The xy scatter plot can be manually drawn using LibreOffice Calc or programably using python(matplotlib and related dependencies need to be installed)
+```
+python visualize-jmh-result.py
+```
+ 
 # License
 
 'Benchmarking Experiments' is distributed under the terms of the [Apache Software Foundation license, version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
