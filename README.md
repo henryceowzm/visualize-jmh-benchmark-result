@@ -44,7 +44,7 @@ Group result by number of threads
 awk -F ',' 'BEGIN{OFS=""} /_[0-9]/ {S[$3]=S[$3]" "$5} END {for (a in S) print a,S[a]}' dateformats.csv > dateformats-chart.csv
 ```
 
-The xy scatter plot can be drawn manually using LibreOffice Calc, MS excel, or programably using python([matplotlib](http://matplotlib.org/users/installing.html) and related dependencies should be installed)
+The xy scatter plot can be drawn manually using LibreOffice Calc, MS excel, or programably using python([matplotlib](http://matplotlib.org/users/installing.html))
 ```
 python visualize-jmh-result.py
 ```
