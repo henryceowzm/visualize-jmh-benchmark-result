@@ -34,17 +34,17 @@ The Gradle build file supports also IntelliJ IDEA project setup. Just issue `gra
 # Visualize jmh benchmark result of DateFormat
 Run benchmark of DateFormat
 ```
-java -jar build/libs/benchmarking-experiments-0.1.0-all.jar "name.mitterdorfer.benchmark.jmh.DateFormat.*"
+java -jar build/libs/benchmarking-experiments-0.1.0-all.jar "name.mitterdorfer.benchmark.jmh.DateFormat.*" -rf csv -rff dateformats.csv
 ```
 
 The final result could be something like dateformats.csv
 
 Group result by number of threads
 ```
-awk -F ',' 'BEGIN{OFS=""} /_[0-9]/ {S[$3]=S[$3]" "$5} END {for (a in S) print a,S[a]}' dateformats.csv>dateformats-chart.csv
+awk -F ',' 'BEGIN{OFS=""} /_[0-9]/ {S[$3]=S[$3]" "$5} END {for (a in S) print a,S[a]}' dateformats.csv > dateformats-chart.csv
 ```
 
-The xy scatter plot can be manually drawn using LibreOffice Calc or programably using python(matplotlib and related dependencies need to be installed)
+The xy scatter plot can be drawn manually using LibreOffice Calc, MS excel, or programably using python([matplotlib](http://matplotlib.org/users/installing.html) and related dependencies should be installed)
 ```
 python visualize-jmh-result.py
 ```
