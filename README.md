@@ -14,8 +14,8 @@ The project requires at least JDK 7 and Gradle 2.0 or Maven 3.0.
 Installation with Gradle (recommended):
 
 ```
-git clone https://github.com/danielmitterdorfer/benchmarking-experiments.git
-cd benchmarking-experiments
+git clone https://github.com/henryceowzm/visualize-jmh-benchmark-result.git
+cd visualize-jmh-benchmark-result
 gradle shadow
 java -jar build/libs/benchmarking-experiments-0.1.0-all.jar
 ```
@@ -23,8 +23,8 @@ java -jar build/libs/benchmarking-experiments-0.1.0-all.jar
 or alternatively with Maven:
 
 ```
-git clone https://github.com/danielmitterdorfer/benchmarking-experiments.git
-cd benchmarking-experiments
+git clone https://github.com/henryceowzm/visualize-jmh-benchmark-result.git
+cd visualize-jmh-benchmark-result
 mvn clean package
 java -jar target/benchmarking-experiments.jar
 ```
